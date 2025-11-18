@@ -49,14 +49,14 @@ router.post('/add',async(req,res,next)=>{
     try
     {
         let newGift = Gift({
-            "Name" : req.body.name,
-            "Category" : req.body.category,
-            "Priority" : req.body.priority,
-            "Price" : req.body.price,
-            "Purchase" : req.body.purchase
+            "Name" : req.body.Name,
+            "Category" : req.body.Category,
+            "Priority" : req.body.Piority,
+            "Price" : req.body.Price,
+            "Purchase" : req.body.Purchase
         });
         Gift.create(newGift).then(()=>{
-            res.redirect('/gift')
+            res.redirect('/gifts')
         })
     }
     catch(err)
@@ -67,16 +67,53 @@ router.post('/add',async(req,res,next)=>{
         })
     }
 })
+
+
 // Get route for displaying the Edit Page - Update Operation
-router.get('/edit/:id',async(req,res,next)=>{
+router.get('/edit/:id', async (req, res) => {
+    try {
+        const gift = await Gift.findById(req.params.id);
+        res.render('Gifts/edit', {
+            title: 'Edit Gift',
+            gift: gift
+        });
+    } catch (err) {
+        console.error(err);
+        res.redirect('/gifts');
+    }
+});
 
-})
+
 // Post route for processing the Edit Page - Update Operation
-router.post('/edit/:id',async(req,res,next)=>{
+router.post('/edit/:id', async (req, res) => {
+    try {
+        await Gift.findByIdAndUpdate(req.params.id, {
+            "Name" : req.body.Name,
+            "Category" : req.body.Category,
+            "Priority" : req.body.Piority,
+            "Price" : req.body.Price,
+            "Purchase" : req.body.Purchase
+        });
+        res.redirect('/gifts');
+    } catch (err) {
+        console.error(err);
+        res.redirect('/gifts');
+    }
+});
 
-})
 // Get route for performing delete operation - Delete Operation
-router.get('/delete/:id',async(req,res,next)=>{
+router.get('/delete/:id', async (req, res) => {
+    try {
+        await Gift.findByIdAndDelete(req.params.id);
+        res.redirect('/gifts');
+    } catch (err) {
+        console.error(err);
+        res.redirect('/gifts');
+    }
+});
 
-})
+
+
+
+
 module.exports = router;
