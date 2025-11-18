@@ -1,31 +1,30 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected!"))
-  .catch(err => console.log("Error connecting:", err));
-
-
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let mongoose = require('mongoose');
-let DB = require('./db');
+
+let DB = require('./db');             // your db.js (should export { URI: ... })
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
-let booksRouter = require('../routes/book')
+let giftsRouter = require('../routes/gift');
+
 var app = express();
 
-// Test DB Connection
-mongoose.connect(DB.URI);
+// Connect to MongoDB (single connection using DB.URI from db.js or .env)
+mongoose.connect(DB.URI)
+  .then(() => console.log("MongoDB connected!"))
+  .catch(err => console.log("Error connecting:", err));
+
+// keep using the mongoose connection object like you had
 let mongoDB = mongoose.connection;
-mongoDB.on('error',console.error.bind(console,'Connection error'));
-mongoDB.once('open',()=>{
+mongoDB.on('error', console.error.bind(console, 'Connection error'));
+mongoDB.once('open', () => {
   console.log('Connected to the MongoDB');
-})
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -40,7 +39,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/books',booksRouter);
+app.use('/gifts', giftsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,7 +54,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error',{title:'Error'});
+  res.render('error', { title: 'Error' });
 });
 
 module.exports = app;

@@ -1,0 +1,62 @@
+<%-include ../partials/header.ejs %>
+<%-include ../partials/main_nav.ejs %>
+<!--Content for adding the item-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <!-- for the NAME -->
+            <form class="form" method="post">
+                <div class="form-group">
+                    <label for="nameTextField">Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the name of the gift"
+                    name="name" required>
+                </div>
+                <!-- for the CATEGORY -->
+                <div class="form-group">
+                    <label for="categoryTextField">Category</label>
+                    <input type="text" class="form-control"
+                    id="categoryTextField"
+                    placeholder="Enter the type of category"
+                    name="category" required>
+                </div>
+                <!-- for the PRIORITY -->
+                <div class="form-group">
+                    <label for="priorityTextField">Priority</label>
+                    <input type="text" class="form-control"
+                    id="priorityTextField"
+                    placeholder="Enter priority level"
+                    name="priority" required>
+                </div>
+                <!-- for the PRICE -->
+                <div class="form-group">
+                    <label for="priceTextArea">Price</label>
+                    <textarea type="text" class="form-control"
+                    id="priceTextArea"
+                    placeholder="Enter the price of the item"
+                    name="item" required></textarea>
+                </div>
+                <!-- for the PURCHASE -->
+                <div class="form-group">
+                    <label for="purchaseTextField">Purchase</label>
+                    <input type="text" class="form-control"
+                    id="purchaseTextField"
+                    placeholder="Enter where this item is purchased"
+                    name="purchase" required>
+                </div>
+                <br>
+                <!--SUBMIT BUTTON-->
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit </button>
+                <!--DELETE button-->
+                <a href="/gifts" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<%-include ../partials/footer.ejs %>

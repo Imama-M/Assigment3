@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-let Book = require('../models/book');
+let Gift = require('../models/gift');
 
 // get --> Extract & read something
 // post --> post something
@@ -13,17 +13,17 @@ let Book = require('../models/book');
 router.get('/',async(req,res,next)=>{
     try
     {
-        const BookList = await Book.find();
+        const GiftList = await Gift.find();
         //console.log(BookList);
-        res.render('Books/list',{
-            title:'Books',
-            BookList:BookList
+        res.render('Gifts/list',{
+            title:'Gifts',
+            GiftList:GiftList
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Books/list',{
+        res.render('Gifts/list',{
             error:'Error on server'
         })
     }
@@ -32,14 +32,14 @@ router.get('/',async(req,res,next)=>{
 // Get route for displaying the Add Page - Create Operation
 router.get('/add',async(req,res,next)=>{
     try{
-        res.render('Books/add',{
-            title:'Add a Book'
+        res.render('Gifts/add',{
+            title:'Add a Gift'
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Books/add',{
+        res.render('Gift/add',{
             error:'Error on server'
         })
     }
@@ -48,20 +48,21 @@ router.get('/add',async(req,res,next)=>{
 router.post('/add',async(req,res,next)=>{
     try
     {
-        let newBook = Book({
-            "name":req.body.name,
-            "author":req.body.author,
-            "description":req.body.description,
-            "price":req.body.price
+        let newGift = Gift({
+            "Name" : req.body.name,
+            "Category" : req.body.category,
+            "Priority" : req.body.priority,
+            "Price" : req.body.price,
+            "Purchase" : req.body.purchase
         });
-        Book.create(newBook).then(()=>{
-            res.redirect('/books')
+        Gift.create(newGift).then(()=>{
+            res.redirect('/gift')
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Books/add',{
+        res.render('Gifts/add',{
             error:'Error on server'
         })
     }

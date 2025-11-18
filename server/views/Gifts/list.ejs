@@ -1,0 +1,33 @@
+<%-include ../partials/header.ejs %>
+<%-include ../partials/main_nav.ejs %>
+<!--Main content for displaying my database-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!--Header Row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Category</th>
+                    <th class="text-center col-1">Priority</th>
+                    <th class="text-center col-4">Price</th>
+                    <th class="text-center col-1">Purchase</th>
+                </tr>
+                <!--for/while loop-->
+                <% for(let count=0; count<GiftList.length;count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= GiftList[count].Name %></td>
+                        <td class="text-center col-2"><%= GiftList[count].Category %></td>
+                        <td class="text-center col-1"><%= GiftList[count].Priority %></td>
+                        <td class="text-center col-4"><%= GiftList[count].Price %></td>
+                        <td class="text-center col-1"><%= GiftList[count].Purchase %></td>
+                    </tr>
+                <% } %>
+            </table>
+
+        </div>
+    </div>
+</main>
+<%-include ../partials/footer.ejs %>
