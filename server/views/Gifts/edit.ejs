@@ -6,7 +6,7 @@
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
 
-            <form action="/gifts/edit/<%= gift._id %>" method="POST">
+            <form action="/gifts/edit/<%= gift._id %>" method="post">
                 <div class="form-group">
                     <label for="nameTextField">Name</label>
                     <input type="text" class="form-control"
@@ -26,6 +26,7 @@
                     value="<%= gift.Category %>"
                     required>
                 </div>
+                
                 <!-- for the PRIORITY -->
 
                 <div class="form-group">
