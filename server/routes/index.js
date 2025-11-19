@@ -16,14 +16,7 @@ router.get('/home', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('index', { title: 'About' });
 });
-/* GET products page. */
-router.get('/products', function(req, res, next) {
-  res.render('index', { title: 'Products' });
-});
-/* GET services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services' });
-});
+
 /* GET contact us page. */
 router.get('/contactus', function(req, res, next) {
   res.render('index', { title: 'Contact us' });
