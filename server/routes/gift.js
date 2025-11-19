@@ -51,7 +51,7 @@ router.post('/add',async(req,res,next)=>{
         let newGift = Gift({
             "Name" : req.body.Name,
             "Category" : req.body.Category,
-            "Priority" : req.body.Piority,
+            "Priority" : req.body.Priority,
             "Price" : req.body.Price,
             "Purchase" : req.body.Purchase
         });

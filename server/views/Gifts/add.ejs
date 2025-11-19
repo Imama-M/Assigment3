@@ -14,7 +14,7 @@
                     <input type="text" class="form-control"
                     id="nameTextField"
                     placeholder="Enter the name of the gift"
-                    name="name" required>
+                    name="Name" required>
                 </div>
                 <!-- for the CATEGORY -->
                 <div class="form-group">
@@ -22,23 +22,43 @@
                     <input type="text" class="form-control"
                     id="categoryTextField"
                     placeholder="Enter the type of category"
-                    name="category" required>
+                    name="Category" required>
                 </div>
-                <!-- for the PRIORITY -->
+                <!-- for the PRIORITY there are three levels: 
+                 REALLY NEED, NEED, WANT -->
                 <div class="form-group">
-                    <label for="priorityTextField">Priority</label>
-                    <input type="text" class="form-control"
-                    id="priorityTextField"
-                    placeholder="Enter priority level"
-                    name="priority" required>
+                    <label>Priority</label>
+                    <!-- Hidden input that actually gets submitted -->
+                    <input type="hidden" name="Priority" id="priorityInput">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" 
+                                type="button" 
+                                id="priorityDropdown" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
+                            Select Priority
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="priorityDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Really Need')">Really Need</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Need')">Need</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Want')">Want</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <script>
+                function setPriority(value) {
+                    document.getElementById('priorityInput').value = value;  
+                    document.getElementById('priorityDropdown').textContent = value;
+                }
+                </script>
+
                 <!-- for the PRICE -->
                 <div class="form-group">
                     <label for="priceTextArea">Price</label>
                     <textarea type="text" class="form-control"
                     id="priceTextArea"
                     placeholder="Enter the price of the item"
-                    name="price" required></textarea>
+                    name="Price" required></textarea>
                 </div>
                 <!-- for the PURCHASE -->
                 <div class="form-group">
@@ -46,7 +66,7 @@
                     <input type="text" class="form-control"
                     id="purchaseTextField"
                     placeholder="Enter where this item is purchased"
-                    name="purchase" required>
+                    name="Purchase" required>
                 </div>
                 <br>
                 <!--SUBMIT BUTTON-->

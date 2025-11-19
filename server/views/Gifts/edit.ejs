@@ -12,7 +12,7 @@
                     <input type="text" class="form-control"
                     id="nameTextField"
                     placeholder="Enter the name of the gift"
-                    name="name" 
+                    name="Name" 
                     value="<%= gift.Name %>"
                     required>
                 </div>
@@ -22,37 +22,58 @@
                     <input type="text" class="form-control"
                     id="categoryTextField"
                     placeholder="Enter the type of category"
-                    name="category" 
+                    name="Category" 
                     value="<%= gift.Category %>"
                     required>
                 </div>
                 <!-- for the PRIORITY -->
+
                 <div class="form-group">
-                    <label for="priorityTextField">Priority</label>
-                    <input type="text" class="form-control"
-                    id="priorityTextField"
-                    placeholder="Enter priority level"
-                    name="priority" 
-                    value="<%= gift.Priority %>"
-                    required>
+                    <label>Priority</label>
+
+                    <!-- Hidden input for the submitted value -->
+                    <input type="hidden" name="Priority" id="priorityInput" value="<%= gift.Priority %>">
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" 
+                                type="button" 
+                                id="priorityDropdown" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
+                            <%= gift.Priority %>
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="priorityDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Really Need')">Really Need</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Need')">Need</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setPriority('Want')">Want</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <script>
+                function setPriority(value) {
+                    document.getElementById('priorityInput').value = value;  
+                    document.getElementById('priorityDropdown').textContent = value;
+                }
+                </script>
+
                 <!-- for the PRICE -->
-                <div class="form-group">
-                    <label for="priceTextArea">Price</label>
-                    <textarea type="text" class="form-control"
-                    id="priceTextArea"
+                 <!--its different here cuz the number wouldn't come up-->
+                <label for ="priceTextField">Price</label>
+                 <input type="number" class="form-control"
+                    id="priceTextField"
                     placeholder="Enter the price of the item"
-                    name="price"
+                    name="Price"
                     value="<%= gift.Price %>"
-                    required></textarea>
-                </div>
+                    required>
                 <!-- for the PURCHASE -->
                 <div class="form-group">
                     <label for="purchaseTextField">Purchase</label>
                     <input type="text" class="form-control"
                     id="purchaseTextField"
                     placeholder="Enter where this item is purchased"
-                    name="purchase"
+                    name="Purchase"
                     value="<%= gift.Purchase %>"
                     required>
                 </div>
