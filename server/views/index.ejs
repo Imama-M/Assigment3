@@ -1,5 +1,32 @@
-<%-include ./partials/header.ejs %>
-<%-include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
-<%-include ./partials/footer.ejs %>
+<!-- this will be the ejs file for the home page-->
+<!-- aka the splash page, i want this to have the following things: a quick summary of what this is and 2 buttons that will take 
+ user to the add a gift page and the view gifts page. I'm gonna leave about and contact pages buttonless but still accessible through nav bar-->
+
+<!DOCTYPE html>
+<html>
+    <%-include ./partials/header.ejs %>
+    <%-include ./partials/main_nav.ejs %>
+    <head>
+        <title> Welcome to wishlist! </title>
+        <link rel="stylesheet" href="/content/home.css">
+    </head>
+
+    <body>
+
+        <!-- this is for the summary-->
+         <div class = "summary-box">
+            <h1> Welcome to your wishlist! </h1>
+            <h2>Here you can organize and manage all the items you've always been wanting</h2>
+            <h2> click the add button below to get started OR click the view button to see existing items.</h2>
+         </div>
+
+        <!-- these are for the add and view buttons-->
+        <div class ="button-container">
+            <a href = "/gifts/add" class="square-btn"> Add an item</a>
+            <a href = "/gifts" class="square-btn"> View items</a>
+        </div>
+    </body>
+
+</html>
+    <%-include ./partials/footer.ejs %>
+

@@ -1,0 +1,70 @@
+/* this is the css file for the splash page
+its gonna have a short description and two buttons and the nav bar will still be accessible
+and this is the color scheme we working with
+#8B63A6
+#956BBF
+#CDC1D9
+#8760BF
+#513973
+*/
+
+/* for the body and the background*/
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #CDC1D9;
+}
+
+/* for the summary box*/
+.summary-box{
+  width: 60%;
+  position: absolute;
+  top: 10%;    
+  left: 50%;     
+  transform: translateX(-50%); 
+  padding: 20px;
+  background: #f1e6ff;
+  border: 2px solid #513973;
+  border-radius: 15px;
+  text-align: center;
+  color:#8B63A6;
+}
+
+/* for the buttons*/
+.button-container {
+  position: absolute;
+  top: 30%;        
+  left: 50%;       
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+}
+
+/* for the button aesthetics*/
+.square-btn {
+  width: 500px;
+  height: 150px;
+  background: #d2c0ff;
+  border: 3px solid#513973;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+}
+
+/* changes the color of button when hovered on */
+.square-btn:hover {
+  background: #bca0ff;
+  transform: scale(1.05);
+}
+
+
