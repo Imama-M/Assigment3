@@ -1,10 +1,28 @@
-<!-- this will be the contact page it just has my contact info in it-->
-
-<%-include ./partials/header.ejs %>
-<%-include ./partials/main_nav.ejs %>
-
+<!-- this will be the contact page it just has my contact info in it
+ lowkey it'll just be my email address lol
+ but still calling elements from the home.css file since everything we need for this is there -->
 
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <%-include ./partials/header.ejs %>
+        <%-include ./partials/main_nav.ejs %>
+        <title> Contact Me </title>
+        <link rel="stylesheet" href="/content/home.css">
+    </head>
+
+    <body>
+
+        <!-- this is for the summary-->
+         <div class = "summary-box">
+            <h1> Contact information </h1>
+            <h2>email me at: imama.meraj@ontariotechu.net</h2>
+         </div>
+
+    </body>
+
+</html>
 
 
 <%-include ./partials/footer.ejs %>

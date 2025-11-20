@@ -1,22 +1,20 @@
-<nav class="navbar navbar-dark bg-dark p-1 fixed-top">
+<nav class="navbar navbar-dark bg-dark p-1 fixed-top custom-navbar">
   <div class="container-fluid">
-    <!-- Brand -->
-    <a class="navbar-brand fs-3 text-warning" href="/">Wishlist</a>
+    <!--click on wishlist and go home page -->
+    <a class="navbar-brand fs-1 text-white" href="/"> Wishlist</a>
 
     <!-- Toggler button - opens the offcanvas -->
     <button class="navbar-toggler" type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation">
+            data-bs-target="#offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Offcanvas panel (appears from the right because of offcanvas-end) -->
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end custom-offcanvas" id="offcanvasNavbar">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title fs-2">Menu</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title fs-3 text-white">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
       </div>
 
       <div class="offcanvas-body">

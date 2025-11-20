@@ -1,10 +1,30 @@
-<!-- this is the about page and it'll have information about me and the project-->
+<!-- this is the about page and it'll have information about me and the project
+ i'm also gonna put the buttons for the add page  -->
 
-<%-include ./partials/header.ejs %>
-<%-include ./partials/main_nav.ejs %>
+<!DOCTYPE html>
+<html>
+    <%-include ./partials/header.ejs %>
+    <%-include ./partials/main_nav.ejs %>
+    <head>
+        <title> About Me! </title>
+        <link rel="stylesheet" href="/content/home.css">
+    </head>
 
+    <body>
 
+        <!-- this is for the summary-->
+         <div class = "summary-box">
+            <h2> Hello and welcome to my website!</h2>
+            <h2> The purpose of this website is to organize and manage the things that people have on their wishlists. <br>
+            They can do so by adding items, then including information about those items like what it is, how much it is and where it can be found.</h2>
+            <h3> To get started click the add button below. </h3>
+         </div>
 
+        <!-- these are for the add and view buttons-->
+        <div class ="button-container">
+            <a href = "/gifts/add" class="square-btn"> Add an item</a>
+        </div>
+    </body>
 
-
+</html>
 <%-include ./partials/footer.ejs %>

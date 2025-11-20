@@ -1,0 +1,128 @@
+/* the customization for the nav bar will go in this css file 
+the !important is what overrides the default bootstrap color
+
+the customization for the add form and the edit part of the form will also go here 
+it'll just be AFTER the nav bar stuff  
+these are the colors we working with 
+#8B63A6
+#956BBF
+#CDC1D9
+#8760BF
+#513973*/
+
+/* for top navbar */
+.custom-navbar {
+  background-color: #513973 !important;
+}
+
+/* for where i click wishlist and it sends me home page */
+.custom-navbar .navbar-brand {
+  color: #CDC1D9 !important;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+/* for links to the pages when menu pops up */
+.custom-navbar .nav-link {
+  color: #CDC1D9 !important;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+/* for when its hovered over */
+.custom-navbar .nav-link:hover {
+  color: #8B63A6 !important;
+}
+
+/* for offcanvas menu */
+.custom-offcanvas {
+  background-color: #513973 !important;
+}
+
+/* for offcanvas links and then after that its hover */
+.custom-offcanvas .nav-link {
+  color: #CDC1D9;
+}
+.custom-offcanvas .nav-link:hover {
+  color: #8B63A6;
+}
+
+
+
+/* the form customization starts here */
+
+body{
+  background-color: #513973 !important;
+}
+
+.container {
+    margin-top: 100px;
+    background-color: #513973;
+    color: white;
+}
+
+/* Style the Form Card Look */
+.full-width-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 30px !important;
+    background-color: #513973 !important;
+    color: #CDC1D9 !important;
+}
+
+/* Input and textarea box styles */
+.form-control {
+    background-color: #8B63A6 !important;
+    border: 3px solid white !important;
+    color: white !important;
+}
+
+/* Ensure label text is white */
+.form-group label {
+    color: white;
+    font-weight: bold;
+}
+
+/* Priority dropdown button */
+#priorityDropdown {
+    background-color: #8760BF;
+    color:white;
+    font-weight: bold;
+}
+
+/* Buttons  first the submit button and it's hover
+ then the warning button and it's hover*/
+
+ /* submit button*/
+.btn-primary {
+    background-color: #8B63A6 !important;
+    border: #CDC1D9 !important;
+    font-weight: bold !important;
+}
+
+.btn-primary:hover {
+    background-color: #CDC1D9 !important;
+}
+
+.btn-warning {
+    background-color: #8B63A6 !important;
+    border:#CDC1D9 !important;
+    font-weight: bold !important;
+    color: white;
+}
+.btn-warning:hover {
+    background-color: #CDC1D9 !important;
+}
+
+
+/* the button for the delete on the table page is gonna come here too*/
+.btn-danger {
+    background-color: #8760BF !important;
+    border: #CDC1D9 !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+.btn-danger:hover {
+    background-color: #CDC1D9 !important;
+}
