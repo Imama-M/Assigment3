@@ -10,6 +10,14 @@ these are the colors we working with
 #8760BF
 #513973*/
 
+/* ----------------- FOR FOOTER ----------------------*/
+.card-footer.text-body-secondary{
+  background-color: black !important;
+  color:#CDC1D9 !important;
+  font-size: 1.5rem;
+  border-color: black !important;
+}
+
 /* ------------------- FOR NAV BAR------------------- */
 .custom-navbar {
   background-color: #513973 !important;
