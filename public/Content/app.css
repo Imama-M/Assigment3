@@ -10,7 +10,7 @@ these are the colors we working with
 #8760BF
 #513973*/
 
-/* for top navbar */
+/* ------------------- FOR NAV BAR------------------- */
 .custom-navbar {
   background-color: #513973 !important;
 }
@@ -49,7 +49,8 @@ these are the colors we working with
 
 
 
-/* the form customization starts here */
+/*-------------------- FORM CUSTOMIZATION ------------------------------
+applies to both the add and edit parts of the form */
 
 body{
   background-color: #513973 !important;
@@ -125,4 +126,86 @@ body{
 }
 .btn-danger:hover {
     background-color: #CDC1D9 !important;
+}
+
+
+/* this is the code for the table part of the form like the view items page */
+.table {
+    width: 100% !important;
+    background-color: #8B63A6 !important; /* table background */
+    color: white !important; /* text color */
+}
+
+/* Header row (only TH cells) */
+.table thead th, 
+.table tr:first-child th {
+    background-color: #7c53c3; /* header color */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Data row text */
+.table td {
+    color: #CDC1D9;
+}
+
+
+/* Border color */
+.table-bordered th,
+.table-bordered td {
+    border-color: #956BBF;
+}
+
+
+/* for the add a form button*/
+.button-container {
+  position: absolute;
+  top: 60%;        
+  left: 50%;       
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+}
+
+/* for the button aesthetics*/
+.square-btn {
+  width: 500px;
+  height: 150px;
+  background: #d2c0ff;
+  border: 3px solid#513973;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+}
+
+/* changes the color of button when hovered on */
+.square-btn:hover {
+  background: #bca0ff;
+  transform: scale(1.05);
+}
+
+
+/* color and sizing of add button on the view gifts page*/
+.d-flex .btn-success{
+  width: 100px;
+  height: 50px;
+  background-color: #8B63A6;
+  border: 3px;
+  font-weight: 600;
+  font-size: 19px;
+  padding: 8px 14px;
+  border-radius:8px;
+}
+
+/* hover color of add button on the view gifts page*/
+.d-flex .btn-success:hover{
+  background: #CDC1D9;
 }
